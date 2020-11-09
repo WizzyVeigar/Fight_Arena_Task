@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,9 +9,13 @@ namespace Kamp_Arena_Opgave
 {
     class RenéAdapter : IFighter
     {
-        SKPInstructor René = new SKPInstructor();
+        SKPInstructor René;
         bool switchAttack = false;
 
+        public RenéAdapter(SKPInstructor sKPInstructor)
+        {
+            René = sKPInstructor;
+        }
 
         public int DefenseLeft => René.Defense();
 

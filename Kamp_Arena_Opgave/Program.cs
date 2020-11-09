@@ -12,10 +12,14 @@ namespace Kamp_Arena_Opgave
         {
             while (true)
             {
+                Wizard wiz = new Wizard();
+                Dragon piff = new Dragon();
+                SKPInstructor rene = new SKPInstructor();
+
                 IFighter R1 = new Ridder();
-                IFighter R2 = new WizardAdapter();
-                IFighter R3 = new DragonAdapter();
-                IFighter R4 = new RenéAdapter();
+                IFighter R2 = new WizardAdapter(wiz);
+                IFighter R3 = new DragonAdapter(piff);
+                IFighter R4 = new RenéAdapter(rene);
 
                 Console.WriteLine(Fight(R4, R3));
                 //Console.WriteLine("The winner is" + winnerAnnounce);
@@ -35,7 +39,7 @@ namespace Kamp_Arena_Opgave
                 Console.WriteLine("Player 2 is hit for " + attack + ": " + f2.DefenseLeft + "HP left");
                 // Anden fighter henter attack
                 attack = f2.Attack();
-                // Første fighter skal forsvare sig
+                //Første fighter skal forsvare sig
                 f1.Defend(attack);
                 Console.WriteLine("Player 1 is hit for " + attack + ": " + f1.DefenseLeft + "HP left");
             }

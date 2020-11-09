@@ -8,8 +8,12 @@ namespace Kamp_Arena_Opgave
 {
     class WizardAdapter : IFighter
     {
-        Wizard wizard = new Wizard();
+        Wizard wizard;
 
+        public WizardAdapter(Wizard wizard)
+        {
+            this.wizard = wizard;
+        }
 
         public int DefenseLeft => wizard.DefenseLeft();
 

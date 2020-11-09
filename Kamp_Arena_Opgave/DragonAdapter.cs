@@ -8,8 +8,13 @@ namespace Kamp_Arena_Opgave
 {
     class DragonAdapter : IFighter
     {
-        Dragon Piff = new Dragon();
+        Dragon Piff;
         bool switchAttack = false;
+
+        public DragonAdapter(Dragon dragon)
+        {
+            Piff = dragon;
+        }
 
         public int DefenseLeft => Piff.Defense();
 
